@@ -16,7 +16,7 @@
       
 - name: install go pkgs
   with_items: '{{go_get}}'
-  command: '{{go_root}}/bin/go get {{item}}'
+  command: '{{go_root}}/bin/go' get {{item}}
   environment:
     GOROOT: '{{go_root}}'
     GOPATH: '{{go_path}}'
