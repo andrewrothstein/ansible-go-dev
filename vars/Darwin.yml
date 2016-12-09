@@ -1,0 +1,4 @@
+---
+go_profile_dir: ~/.profile.d
+go_root: /usr/local/opt/go/libexec
+

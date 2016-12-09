@@ -1,0 +1,3 @@
+---
+# vars file for go-dev
+go_path : '{{ansible_env.HOME}}/go'

@@ -1,0 +1,8 @@
+---
+# defaults file for go-dev
+go_get:
+  - github.com/tools/godep
+
+go_profile_dir: /etc/profile.d
+go_root: /usr/local/go
+

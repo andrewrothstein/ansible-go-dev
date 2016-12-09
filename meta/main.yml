@@ -1,0 +1,37 @@
+---
+galaxy_info:
+  author: Andrew Rothstein
+  description: '@TODO name this role'
+  company: BlackRock
+  license:
+    - MIT
+  min_ansible_version: 2.0
+  platforms:
+    - name: EL
+      versions:
+        - all
+    - name: Fedora
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - all
+    - name: Alpine
+      versions:
+        - all
+    - name: MacOSX
+      versions:
+        - all
+  galaxy_tags:
+    - development
+    - go
+    - golang
+
+dependencies:
+  - role: andrewrothstein.go
+    version: v2.0.0
+  - role: andrewrothstein.git
+    version: v3.0.0
+  - role: spk83.bash-profile
+    version: v1.0.0
+

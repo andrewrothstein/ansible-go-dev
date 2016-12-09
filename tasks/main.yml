@@ -1,0 +1,26 @@
+---
+- name: resolve platform specific vars
+  include_vars: "{{item}}"
+  with_first_found:
+    - files:
+        - "{{ansible_distribution}}-{{ansible_distribution_release}}.yml"
+        - "{{ansible_distribution}}.yml"
+        - "{{ansible_os_family}}.yml"
+      skip: true
+    
+- name: install go pkgs
+  with_items: '{{go_get}}'
+  command: '{{go_root}}/bin/go get {{item}}'
+  environment:
+    GOROOT: '{{go_root}}'
+    GOPATH: '{{go_path}}'
+  args:
+    creates: '{{go_path}}/src/{{item}}'
+
+- name: set go-dev environment variables
+  with_items:
+    - go-dev.sh
+  template: >
+    src={{item}}.j2
+    dest={{go_profile_dir}}/{{item}}
+    mode=0644
