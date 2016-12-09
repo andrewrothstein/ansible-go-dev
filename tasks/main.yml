@@ -7,7 +7,13 @@
         - "{{ansible_distribution}}.yml"
         - "{{ansible_os_family}}.yml"
       skip: true
-    
+
+- name: create go path
+  file: >-
+    path={{go_path}}
+    state=directory
+    mode=0755
+      
 - name: install go pkgs
   with_items: '{{go_get}}'
   command: '{{go_root}}/bin/go get {{item}}'
