@@ -3,6 +3,6 @@
 go_get:
   - github.com/tools/godep
 
-go_profile_dir: /etc/profile.d
 go_root: /usr/local/go
+go_profile_dir: ~/.profile.d
 
