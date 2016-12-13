@@ -4,5 +4,5 @@ go_get:
   - github.com/tools/godep
 
 go_root: /usr/local/go
-go_profile_dir: ~/.profile.d
+go_profile_dir: '{{ansible_env.HOME}}/.profile.d'
 
