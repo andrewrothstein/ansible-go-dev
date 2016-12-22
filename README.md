@@ -1,7 +1,7 @@
-username.rolename
+andrewrothstein.go-dev
 =========
 
-A brief description of the username.rolename goes here.
+Role to do go development...
 
 Requirements
 ------------
@@ -24,7 +24,7 @@ Example Playbook
 ```yml
 - hosts: servers
   roles:
-    - username.rolename
+    - andrewrothstein.go-dev
 ```
 
 License
@@ -35,4 +35,4 @@ MIT
 Author Information
 ------------------
 
-Andrew Rothstein andrew.rothstein@gmail.com
+Andrew Rothstein <andrew.rothstein@gmail.com>
