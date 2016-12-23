@@ -19,7 +19,7 @@
       
 - name: install go pkgs
   with_items:
-    - '{{(go_get|default([])}}'
+    - '{{go_get|default([])}}'
     - github.com/tools/godep
   command: '{{go_root}}/bin/go get {{item}}'
   environment:
