@@ -1,7 +1,7 @@
 ---
 # defaults file for go-dev
-go_get:
-  - github.com/tools/godep
+#go_get:
+#  - github.com/tools/foo
 
 go_root: /usr/local/go
 go_profile_dir: '{{ansible_env.HOME}}/.profile.d'

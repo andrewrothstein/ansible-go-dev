@@ -23,13 +23,13 @@ test:
               - OS=ubuntu_trusty
               - OS=ubuntu_xenial
 
-            before_script:
-              - env | sort
-              - export UPSTREAM=andrewrothstein/docker-ansible-role
+            before_script: >|
+              env | sort
+              export UPSTREAM=andrewrothstein/docker-ansible-role
 
-            script:
-              - echo "FROM $UPSTREAM:$OS" > Dockerfile.$OS
-              - docker build -t $CIRCLE_PROJECT_REPONAME:$OS -f Dockerfile.$OS .
+            script: >|
+              echo "FROM $UPSTREAM:$OS" > Dockerfile.$OS
+              docker build -t $CIRCLE_PROJECT_REPONAME:$OS -f Dockerfile.$OS .
 
             after_script:
               - docker images $CIRCLE_PROJECT_REPONAME:$OS

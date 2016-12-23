@@ -18,7 +18,7 @@
     mode=0755
       
 - name: install go pkgs
-  with_items: '{{go_get}}'
+  with_items: '{{go_get|default([]) + "github.com/tools/godep"}}'
   command: '{{go_root}}/bin/go get {{item}}'
   environment:
     GOROOT: '{{go_root}}'
@@ -26,6 +26,7 @@
   args:
     creates: '{{go_path}}/src/{{item}}'
 
+    
 - name: set go-dev environment variables
   with_items:
     - go-dev.sh

@@ -3,4 +3,6 @@
 - hosts: all
   roles:
     - role: '{{playbook_dir}}'
+      go_get:
+        - github.com/cloudflare/cfssl/cmd/...
       
