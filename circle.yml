@@ -24,16 +24,17 @@ test:
               - OS=ubuntu_xenial
 
             before_script:
-              - env | sort
               - export UPSTREAM=andrewrothstein/docker-ansible-role
-
-            script:
               - export TAGGED_UPSTREAM=$UPSTREAM:$OS
               - export TARGET=$CIRCLE_PROJECT_REPONAME:$OS
               - export DOCKERFILE=Dockerfile.$OS
+              - env | sort
+
+            script:
+              - echo building $TARGET...
               - echo "FROM $TAGGED_UPSTREAM" > $DOCKERFILE
               - docker build -t $TARGET -f $DOCKERFILE .
-              - docker run --rm -it $TARGET ansible-playbook test.yml
+              - echo done building $TARGET
 
             after_script:
               - docker images $CIRCLE_PROJECT_REPONAME:$OS
