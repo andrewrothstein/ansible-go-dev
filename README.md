@@ -2,7 +2,7 @@ andrewrothstein.go-dev
 =========
 
 ```
-Role to do go development with GOPATH set to ~/go
+Set yourself up for go development with GOPATH set to ~/go
 ```
 
 Requirements
@@ -28,6 +28,8 @@ Example Playbook
   roles:
     - andrewrothstein.go-dev
 ```
+
+See [test.yml](test.yml)
 
 License
 -------
