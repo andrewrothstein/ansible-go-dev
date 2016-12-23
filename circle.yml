@@ -38,6 +38,6 @@ test:
             after_script:
               - docker images $CIRCLE_PROJECT_REPONAME:$OS
 
-        EHD
+          EHD
       :
         parallel: true
