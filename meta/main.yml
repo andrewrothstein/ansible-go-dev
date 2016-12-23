@@ -29,9 +29,7 @@ galaxy_info:
 
 dependencies:
   - role: andrewrothstein.go
-    version: v2.0.0
+    version: v2.0.1
   - role: andrewrothstein.git
     version: v3.0.0
-  - role: spk83.bash-profile
-    version: v1.0.0
 
