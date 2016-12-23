@@ -9,6 +9,8 @@
       skip: true
 
 - name: create go path
+  become: '{{go_escalate}}'
+  become_user: root
   with_items:
     - '{{go_path}}'
     - '{{go_profile_dir}}'
@@ -18,6 +20,8 @@
     mode=0755
       
 - name: install go pkgs
+  become: '{{go_escalate}}'
+  become_user: root
   with_items:
     - '{{go_get|default([])}}'
     - github.com/tools/godep
@@ -30,6 +34,8 @@
 
     
 - name: set go-dev environment variables
+  become: '{{go_escalate}}'
+  become_user: root
   with_items:
     - go-dev.sh
   template: >

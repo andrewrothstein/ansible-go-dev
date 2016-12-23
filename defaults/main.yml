@@ -5,4 +5,4 @@
 
 go_root: /usr/local/go
 go_profile_dir: '{{ansible_env.HOME}}/.profile.d'
-
+go_escalate: False
