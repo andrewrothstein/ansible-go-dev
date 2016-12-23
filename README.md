@@ -1,7 +1,9 @@
 andrewrothstein.go-dev
 =========
 
-Role to do go development...
+```
+Role to do go development with GOPATH set to ~/go
+```
 
 Requirements
 ------------
