@@ -23,8 +23,8 @@
   become: '{{go_dev_escalate}}'
   become_user: root
   with_items:
-    - '{{go_get|default([])}}'
     - github.com/tools/godep
+    - '{{go_get|default([])}}'
   command: '{{go_root}}/bin/go get -u {{item}}'
   environment:
     GOROOT: '{{go_root}}'
