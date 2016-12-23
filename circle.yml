@@ -23,20 +23,20 @@ test:
               - OS=ubuntu_trusty
               - OS=ubuntu_xenial
 
-            before_script: >|
-              env | sort
-              export UPSTREAM=andrewrothstein/docker-ansible-role
+            before_script:
+              - env | sort
+              - export UPSTREAM=andrewrothstein/docker-ansible-role
 
-            script: >|
-              export TAGGED_UPSTREAM=$UPSTREAM:$OS
-              export TARGET=$CIRCLE_PROJECT_REPONAME:$OS
-              export DOCKERFILE=Dockerfile.$OS
-              echo "FROM $TAGGED_UPSTREAM" > $DOCKERFILE
-              docker build -t $TARGET -f $DOCKERFILE .
-              docker run --rm -it $TARGET ansible-playbook test.yml
+            script:
+              - export TAGGED_UPSTREAM=$UPSTREAM:$OS
+              - export TARGET=$CIRCLE_PROJECT_REPONAME:$OS
+              - export DOCKERFILE=Dockerfile.$OS
+              - echo "FROM $TAGGED_UPSTREAM" > $DOCKERFILE
+              - docker build -t $TARGET -f $DOCKERFILE .
+              - docker run --rm -it $TARGET ansible-playbook test.yml
 
-            after_script: >|
-              docker images $CIRCLE_PROJECT_REPONAME:$OS
+            after_script:
+              - docker images $CIRCLE_PROJECT_REPONAME:$OS
 
         EHD
       :
