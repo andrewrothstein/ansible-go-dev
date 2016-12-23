@@ -4,4 +4,4 @@
 #  - github.com/tools/foo
 
 go_root: /usr/local/go
-go_escalate: False
+go_dev_escalate: False

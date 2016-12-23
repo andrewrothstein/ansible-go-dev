@@ -9,18 +9,18 @@
       skip: true
 
 - name: create go path
-  become: '{{go_escalate}}'
+  become: '{{go_dev_escalate}}'
   become_user: root
   with_items:
-    - '{{go_path}}'
-    - '{{go_profile_dir}}'
+    - '{{go_dev_path}}'
+    - '{{go_dev_profile_dir}}'
   file: >-
     path={{item}}
     state=directory
     mode=0755
       
 - name: install go pkgs
-  become: '{{go_escalate}}'
+  become: '{{go_dev_escalate}}'
   become_user: root
   with_items:
     - '{{go_get|default([])}}'
@@ -28,17 +28,17 @@
   command: '{{go_root}}/bin/go get -u {{item}}'
   environment:
     GOROOT: '{{go_root}}'
-    GOPATH: '{{go_path}}'
+    GOPATH: '{{go_dev_path}}'
   args:
-    creates: '{{go_path}}/src/{{item}}'
+    creates: '{{go_dev_path}}/src/{{item}}'
 
     
 - name: set go-dev environment variables
-  become: '{{go_escalate}}'
+  become: '{{go_dev_escalate}}'
   become_user: root
   with_items:
     - go-dev.sh
   template: >
     src={{item}}.j2
-    dest={{go_profile_dir}}/{{item}}
+    dest={{go_dev_profile_dir}}/{{item}}
     mode=0644
