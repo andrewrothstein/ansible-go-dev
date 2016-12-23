@@ -9,8 +9,11 @@
       skip: true
 
 - name: create go path
+  with_items:
+    - '{{go_path}}'
+    - '{{go_profile_dir}}'
   file: >-
-    path={{go_path}}
+    path={{item}}
     state=directory
     mode=0755
       
