@@ -25,7 +25,7 @@
   with_items:
     - '{{go_get|default([])}}'
     - github.com/tools/godep
-  command: '{{go_root}}/bin/go get {{item}}'
+  command: '{{go_root}}/bin/go get -u {{item}}'
   environment:
     GOROOT: '{{go_root}}'
     GOPATH: '{{go_path}}'
