@@ -24,10 +24,10 @@
   become_user: root
   with_items:
     - github.com/tools/godep
-    - '{{go_get|default([])}}'
-  command: '{{go_root}}/bin/go get -u {{item}}'
+    - '{{go_dev_get|default([])}}'
+  command: '{{go_dev_root}}/bin/go get -u {{item}}'
   environment:
-    GOROOT: '{{go_root}}'
+    GOROOT: '{{go_dev_root}}'
     GOPATH: '{{go_dev_path}}'
   args:
     creates: '{{go_dev_path}}/src/{{item}}'

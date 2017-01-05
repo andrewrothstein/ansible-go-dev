@@ -26,7 +26,9 @@ Example Playbook
 ```yml
 - hosts: servers
   roles:
-    - andrewrothstein.go-dev
+    - role: andrewrothstein.go-dev
+	  go_dev_get:
+	    - github.com/cloudflare/cfssl/cmd/...
 ```
 
 See [test.yml](test.yml)

@@ -1,7 +1,7 @@
 ---
 # defaults file for go-dev
-#go_get:
+#go_dev_get:
 #  - github.com/tools/foo
 
-go_root: /usr/local/go
+go_dev_root: /usr/local/go
 go_dev_escalate: False
