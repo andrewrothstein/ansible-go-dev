@@ -22,16 +22,13 @@
 - name: install go pkgs
   become: '{{go_dev_escalate}}'
   become_user: root
-  with_items:
-    - github.com/tools/godep
-    - '{{go_dev_get|default([])}}'
+  with_items: '{{ go_dev_get_default + go_dev_get|default([]) }}'
   command: '{{go_dev_root}}/bin/go get -u {{item}}'
   environment:
     GOROOT: '{{go_dev_root}}'
     GOPATH: '{{go_dev_path}}'
   args:
     creates: '{{go_dev_path}}/src/{{item}}'
-
     
 - name: set go-dev environment variables
   become: '{{go_dev_escalate}}'
