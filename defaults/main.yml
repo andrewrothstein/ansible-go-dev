@@ -5,3 +5,5 @@
 
 go_dev_root: /usr/local/go
 go_dev_escalate: False
+go_dev_get_default:
+  - github.com/tools/godep
