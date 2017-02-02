@@ -23,19 +23,19 @@
   become: '{{go_dev_escalate}}'
   become_user: root
   with_items: '{{ go_dev_get_default + go_dev_get|default([]) }}'
-  command: '{{go_dev_root}}/bin/go get -u {{item}}'
+  command: '{{go_dev_root}}/bin/go get -u {{item.pkg}}'
   environment:
     GOROOT: '{{go_dev_root}}'
     GOPATH: '{{go_dev_path}}'
   args:
-    creates: '{{go_dev_path}}/src/{{item}}'
+    creates: '{{go_dev_root}}/bin/{{item.target}}'
     
 - name: set go-dev environment variables
   become: '{{go_dev_escalate}}'
   become_user: root
   with_items:
     - go-dev.sh
-  template: >
-    src={{item}}.j2
-    dest={{go_dev_profile_dir}}/{{item}}
-    mode=0644
+  template:
+    src: '{{item}}.j2'
+    dest: '{{go_dev_profile_dir}}/{{item}}'
+    mode: '0644'

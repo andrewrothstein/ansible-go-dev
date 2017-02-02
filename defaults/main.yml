@@ -1,9 +1,11 @@
 ---
 # defaults file for go-dev
 #go_dev_get:
-#  - github.com/tools/foo
+#  - pkg: github.com/tools/foo
+#    target: foo
 
 go_dev_root: /usr/local/go
 go_dev_escalate: False
 go_dev_get_default:
-  - github.com/tools/godep
+  - pkg: github.com/tools/godep
+    target: godep
