@@ -28,7 +28,8 @@ Example Playbook
   roles:
     - role: andrewrothstein.go-dev
 	  go_dev_get:
-	    - github.com/cloudflare/cfssl/cmd/...
+	    - pkg: github.com/cloudflare/cfssl/cmd/...
+		  target: cfssl
 ```
 
 See [test.yml](test.yml)
