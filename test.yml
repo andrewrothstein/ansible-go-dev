@@ -2,4 +2,11 @@
 - hosts: all
   roles:
     - role: '{{playbook_dir}}'
-      
+  tasks:
+    - name: check if godep is installed
+      become: '{{go_dev_escalate}}'
+      become_user: root
+      environment:
+        GOROOT: '{{go_dev_root}}'
+        GOPATH: '{{go_dev_path}}'
+      command: "{{go_dev_root}}/bin/go list -f '{{'{{'}}.Root{{'}}'}}' github.com/tools/godep"

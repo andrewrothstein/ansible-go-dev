@@ -28,7 +28,7 @@
     GOROOT: '{{go_dev_root}}'
     GOPATH: '{{go_dev_path}}'
   args:
-    creates: '{{go_dev_root}}/bin/{{item.target}}'
+    creates: '{{go_dev_path}}/bin/{{item.target}}'
     
 - name: set go-dev environment variables
   become: '{{go_dev_escalate}}'
