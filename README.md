@@ -1,3 +1,4 @@
+[![CircleCI](https://circleci.com/gh/andrewrothstein/ansible-go-dev.svg?style=svg)](https://circleci.com/gh/andrewrothstein/ansible-go-dev)
 andrewrothstein.go-dev
 =========
 
