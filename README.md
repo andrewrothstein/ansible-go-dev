@@ -1,10 +1,8 @@
-[![CircleCI](https://circleci.com/gh/andrewrothstein/ansible-go-dev.svg?style=svg)](https://circleci.com/gh/andrewrothstein/ansible-go-dev)
 andrewrothstein.go-dev
 =========
+[![Build Status](https://travis-ci.org/andrewrothstein/ansible-go-dev.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-go-dev)
 
-```
-Set yourself up for go development with GOPATH set to ~/go
-```
+Set yourself up for go development with GOPATH set to ~/go.
 
 Requirements
 ------------
