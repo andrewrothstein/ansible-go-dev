@@ -33,4 +33,4 @@ dependencies:
   - role: andrewrothstein.git
     version: v3.0.1
   - role: andrewrothstein.gcc-toolbox
-    version: v1.0.5
+    version: v1.0.6
