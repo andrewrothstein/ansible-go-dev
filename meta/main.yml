@@ -13,6 +13,13 @@ galaxy_info:
     - name: Fedora
       versions:
         - all
+    - name: Debian
+      versions:
+        - jessie
+        - stretch
+    - name: Archlinux
+      versions:
+        - all
     - name: Ubuntu
       versions:
         - all
@@ -29,7 +36,7 @@ galaxy_info:
 
 dependencies:
   - role: andrewrothstein.go
-    version: v2.0.7
+    version: v2.1.0
   - role: andrewrothstein.git
     version: v3.0.1
   - role: andrewrothstein.gcc-toolbox
