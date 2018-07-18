@@ -16,11 +16,11 @@
   with_items:
     - '{{go_dev_path}}'
     - '{{go_dev_profile_dir}}'
-  file: >-
-    path={{item}}
-    state=directory
-    mode=0755
-      
+  file:
+    path: '{{item}}'
+    state: directory
+    mode: '0755'
+
 - name: install go pkgs
   become: '{{go_dev_escalate}}'
   become_user: root
@@ -31,7 +31,7 @@
     GOPATH: '{{go_dev_path}}'
   args:
     creates: '{{go_dev_path}}/bin/{{item.target}}'
-    
+
 - name: set go-dev environment variables
   become: '{{go_dev_escalate}}'
   become_user: root

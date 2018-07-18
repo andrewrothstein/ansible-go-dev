@@ -36,8 +36,8 @@ galaxy_info:
 
 dependencies:
   - role: andrewrothstein.go
-    version: v2.1.8
+    version: v2.1.9
   - role: andrewrothstein.git
-    version: v3.0.1
+    version: v3.0.2
   - role: andrewrothstein.gcc-toolbox
-    version: v1.0.7
+    version: v1.0.8
