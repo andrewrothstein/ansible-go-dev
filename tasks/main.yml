@@ -1,43 +1,43 @@
 ---
 - name: resolve platform specific vars
-  include_vars: '{{item}}'
+  include_vars: '{{ item }}'
   with_first_found:
     - files:
-        - '{{ansible_distribution}}-{{ansible_distribution_release}}.yml'
-        - '{{ansible_distribution}}.yml'
-        - '{{ansible_os_family}}.yml'
+        - '{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml'
+        - '{{ ansible_distribution }}.yml'
+        - '{{ ansible_os_family }}.yml'
       skip: true
       paths:
-        - '{{role_path}}/vars'
+        - '{{ role_path }}/vars'
 
 - name: create go path
-  become: '{{go_dev_escalate}}'
+  become: '{{ go_dev_escalate }}'
   become_user: root
   with_items:
-    - '{{go_dev_path}}'
-    - '{{go_dev_profile_dir}}'
+    - '{{ go_dev_path }}'
+    - '{{ go_dev_profile_dir }}'
   file:
-    path: '{{item}}'
+    path: '{{ item }}'
     state: directory
     mode: '0755'
 
 - name: install go pkgs
-  become: '{{go_dev_escalate}}'
+  become: '{{ go_dev_escalate }}'
   become_user: root
-  with_items: '{{ go_dev_get_default + go_dev_get|default([]) }}'
-  command: '{{go_dev_root}}/bin/go get -u {{item.pkg}}'
+  with_items: '{{  go_dev_get_default + go_dev_get|default([])  }}'
+  command: '{{ go_dev_root }}/bin/go get -u {{ item.pkg }}'
   environment:
-    GOROOT: '{{go_dev_root}}'
-    GOPATH: '{{go_dev_path}}'
+    GOROOT: '{{ go_dev_root }}'
+    GOPATH: '{{ go_dev_path }}'
   args:
-    creates: '{{go_dev_path}}/bin/{{item.target}}'
+    creates: '{{ go_dev_path }}/bin/{{ item.target }}'
 
 - name: set go-dev environment variables
-  become: '{{go_dev_escalate}}'
+  become: '{{ go_dev_escalate }}'
   become_user: root
   with_items:
     - go-dev.sh
   template:
-    src: '{{item}}.j2'
-    dest: '{{go_dev_profile_dir}}/{{item}}'
+    src: '{{ item }}.j2'
+    dest: '{{ go_dev_profile_dir }}/{{ item }}'
     mode: '0644'
