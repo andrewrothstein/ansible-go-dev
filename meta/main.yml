@@ -1,43 +1,41 @@
----
+dependencies:
+- role: andrewrothstein.go
+  version: v2.1.14
+- role: andrewrothstein.git
+  version: v3.0.3
+- role: andrewrothstein.gcc-toolbox
+  version: v1.0.11
 galaxy_info:
   author: Andrew Rothstein
-  description: supports go development
   company: BlackRock
+  description: supports go development
+  galaxy_tags:
+  - development
+  - go
+  - golang
   license:
-    - MIT
+  - MIT
   min_ansible_version: 2.0
   platforms:
-    - name: EL
-      versions:
-        - all
-    - name: Fedora
-      versions:
-        - all
-    - name: Debian
-      versions:
-        - jessie
-        - stretch
-    - name: Archlinux
-      versions:
-        - all
-    - name: Ubuntu
-      versions:
-        - all
-    - name: Alpine
-      versions:
-        - all
-    - name: MacOSX
-      versions:
-        - all
-  galaxy_tags:
-    - development
-    - go
-    - golang
-
-dependencies:
-  - role: andrewrothstein.go
-    version: v2.1.14
-  - role: andrewrothstein.git
-    version: v3.0.3
-  - role: andrewrothstein.gcc-toolbox
-    version: v1.0.10
+  - name: EL
+    versions:
+    - all
+  - name: Fedora
+    versions:
+    - all
+  - name: Debian
+    versions:
+    - jessie
+    - stretch
+  - name: Archlinux
+    versions:
+    - all
+  - name: Ubuntu
+    versions:
+    - all
+  - name: Alpine
+    versions:
+    - all
+  - name: MacOSX
+    versions:
+    - all
