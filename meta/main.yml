@@ -4,7 +4,7 @@ dependencies:
 - role: andrewrothstein.git
   version: v3.0.5
 - role: andrewrothstein.gcc-toolbox
-  version: v1.0.14
+  version: v1.1.0
 galaxy_info:
   author: Andrew Rothstein
   company: BlackRock
