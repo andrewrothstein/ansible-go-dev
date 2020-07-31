@@ -1,6 +1,6 @@
 dependencies:
 - role: andrewrothstein.go
-  version: v2.1.32
+  version: v2.1.33
 - role: andrewrothstein.git
   version: v3.0.7
 - role: andrewrothstein.gcc-toolbox
@@ -17,25 +17,29 @@ galaxy_info:
   - MIT
   min_ansible_version: 2.0
   platforms:
-  - name: EL
+  - name: Alpine
     versions:
     - all
-  - name: Fedora
+  - name: Archlinux
     versions:
     - all
   - name: Debian
     versions:
-    - jessie
+    - buster
     - stretch
-  - name: Archlinux
+  - name: EL
+    versions:
+    - 7
+    - 8
+  - name: Fedora
+    versions:
+    - 31
+    - 32
+  - name: MacOSX
     versions:
     - all
   - name: Ubuntu
     versions:
-    - all
-  - name: Alpine
-    versions:
-    - all
-  - name: MacOSX
-    versions:
-    - all
+    - bionic
+    - focal
+    - xenial
