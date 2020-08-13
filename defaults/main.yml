@@ -1,11 +1,32 @@
 ---
 # defaults file for go-dev
-#go_dev_get:
-#  - pkg: github.com/tools/foo
-#    target: foo
-
 go_dev_root: /usr/local/go
 go_dev_escalate: False
+
+# Package Installation
 go_dev_get_default:
-  - pkg: github.com/tools/godep
-    target: godep
+  - pkg: golang.org/x/lint/golint
+    target: golint
+# go_dev_get:
+#   - pkg: github.com/tools/foo
+#     target: foo
+# go_dev_export_installed_pkg: true
+
+# GoLang Environment Configuration
+# go_dev_env_bin: "" # GOBIN: The directory where 'go install' will install a command
+# go_dev_env_path: "" # GOENV: The location of the Go environment configuration file
+go_dev_env_proxy: # GOPROXY: URL list of Go module proxy.
+# Note: Setting the value to 'off' will disallow downloading modules from any source. If an entry is value='direct', module downloading uses a direct connection to source contrel servers. 
+  - url: "https://proxy.golang.org"
+    # For each request, the go command tries each proxy in sequence. If there is an error, the go command will try the next proxy in the list if the error is a 404 ir 410 HTTP response or if the current proxy is followed by a pipe character, indicating it is safe to fall back on any error.
+    auto_fallback: true
+  - "direct"
+go_dev_env_sumdb: # GOSUMDB: Name of the checksum database to use and optionally its public key and URL. 
+# Note: If name is set to 'off' the checksum database is not consulted, and all unrecognized modules are accepted.
+  name: sum.golang.org
+  # public_key: <public_key>
+  # url: https://sum.golang.org
+# go_dev_env_insecure: [] # GOINSECURE: List of glob patterns (in the syntax of Go's path.Match) of module path prefixes that should always be fetched in an insecure manner. Only applies to dependencies that are being fetched directly, and does not disable checksum database validation. 
+# go_dev_env_private: [] # GOPRIVATE: List of glob patterns (in the syntax of Go's path.Match) of module path prefixes that the go command considers to be private and should therefore not use the proxy or checksum database
+# go_dev_env_no_proxy: [] # GONOPROXY: List of glob patterns (in the syntax of Go's path.Match) of module path prefixes that allow bypassing the proxy for selected modules. This will override any defined value for GOPRIVATE.
+# go_dev_env_no_sumdb: [] # GONOSUMDB: List of glob patterns (in the syntax of Go's path.Match) of module path prefixes that allow bypassing checksum database validation for selected modules. This will override any defined value for GOPRIVATE.
