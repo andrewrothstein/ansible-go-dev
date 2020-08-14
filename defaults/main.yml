@@ -19,7 +19,7 @@ go_dev_env_proxy: # GOPROXY: URL list of Go module proxy.
 # Note: Setting the value to 'off' will disallow downloading modules from any source. If an entry is value='direct', module downloading uses a direct connection to source contrel servers. 
   - url: "https://proxy.golang.org"
     # For each request, the go command tries each proxy in sequence. If there is an error, the go command will try the next proxy in the list if the error is a 404 ir 410 HTTP response or if the current proxy is followed by a pipe character, indicating it is safe to fall back on any error.
-    auto_fallback: true
+    auto_fallback: false
   - "direct"
 go_dev_env_sumdb: # GOSUMDB: Name of the checksum database to use and optionally its public key and URL. 
 # Note: If name is set to 'off' the checksum database is not consulted, and all unrecognized modules are accepted.
