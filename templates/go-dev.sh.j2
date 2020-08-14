@@ -1,2 +1,32 @@
 export GOPATH={{ go_dev_path }}
-export PATH=$PATH:${GOPATH}/bin
+{% if go_dev_env_bin is defined -%}
+export GOBIN={{ go_dev_env_bin | to_json }}
+{%- endif %}
+
+{% if go_dev_env_path is defined -%}
+export GOENV="{{ go_dev_env_path }}"
+{%- endif %}
+
+export GOPROXY="{% for proxy_entry in go_dev_env_proxy -%}
+{{ proxy_entry.url }}{% if not loop.last %}{{ proxy_entry.auto_fallback | default(false) | ternary("|", ",") }}{% endif %}
+{%- endfor %}"
+export GOSUMDB="{{ go_dev_env_sumdb["name"] }}{% if go_dev_env_sumdb["public_key"] is defined %}+{{ go_dev_env_sumdb["public_key"] }}{% endif %}{% if go_dev_env_sumdb["url"] is defined %} {{ go_dev_env_sumdb["url"] }}{% endif %}"
+{% if go_dev_env_insecure is defined -%}
+export GOINSECURE={{ go_dev_env_insecure | string() | ternary([go_dev_env_insecure],go_dev_env_insecure) | join(',') | to_json }}
+{%- endif %}
+
+{% if go_dev_env_private is defined -%}
+export GOPRIVATE={{ go_dev_env_private | string() | ternary([go_dev_env_private],go_dev_env_private) | join(',') | to_json }}
+{%- endif %}
+
+{% if go_dev_env_no_proxy is defined -%}
+export GONOPROXY={{ go_dev_env_no_proxy | string() | ternary([go_dev_env_no_proxy],go_dev_env_no_proxy) | join(',') | to_json }}
+{%- endif %}
+
+{% if go_dev_env_no_sumdb is defined -%}
+export GONOSUMDB={{ go_dev_env_no_sumdb | string() | ternary([go_dev_env_no_sumdb],go_dev_env_no_sumdb) | join(',') | to_json }}
+{%- endif %}
+
+{% if go_dev_export_installed_pkg is defined and go_dev_export_installed_pkg %}
+export PATH=$PATH:{% if go_dev_env_bin is defined -%} {{ go_dev_env_bin }} {%- else -%} ${GOPATH}/bin {%- endif %}
+{% endif %}
