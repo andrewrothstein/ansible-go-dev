@@ -3,7 +3,7 @@
   roles:
     - role: '{{playbook_dir}}'
   tasks:
-    - name: check if godep is installed
+    - name: check if golint is installed
       become: '{{go_dev_escalate}}'
       become_user: root
       environment:
