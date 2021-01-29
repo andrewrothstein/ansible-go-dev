@@ -1,6 +1,6 @@
 dependencies:
 - role: andrewrothstein.go
-  version: v2.1.42
+  version: v2.1.43
 - role: andrewrothstein.git
   version: v3.1.1
 - role: andrewrothstein.gcc-toolbox
@@ -35,9 +35,6 @@ galaxy_info:
     versions:
     - 31
     - 32
-  - name: Gentoo
-    versions:
-    - all
   - name: MacOSX
     versions:
     - all
