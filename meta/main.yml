@@ -1,6 +1,6 @@
 dependencies:
 - role: andrewrothstein.go
-  version: v2.1.43
+  version: v2.1.44
 - role: andrewrothstein.git
   version: v3.1.1
 - role: andrewrothstein.gcc-toolbox
@@ -25,6 +25,7 @@ galaxy_info:
     - all
   - name: Debian
     versions:
+    - bullseye
     - buster
     - stretch
   - name: EL
