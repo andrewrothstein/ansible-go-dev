@@ -4,9 +4,6 @@ go_dev_root: /usr/local/go
 go_dev_escalate: False
 
 # Package Installation
-go_dev_get_default:
-  - pkg: golang.org/x/lint/golint
-    target: golint
 # go_dev_get:
 #   - pkg: github.com/tools/foo
 #     target: foo

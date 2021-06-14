@@ -1,6 +1,6 @@
 dependencies:
 - role: andrewrothstein.go
-  version: v2.1.50
+  version: v2.1.51
 - role: andrewrothstein.git
   version: v3.1.2
 - role: andrewrothstein.gcc-toolbox

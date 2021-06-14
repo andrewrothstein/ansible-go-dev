@@ -1,12 +1,8 @@
 ---
 - hosts: all
+  vars:
+    go_dev_get:
+      - pkg: github.com/spf13/cobra
+        target: cobra
   roles:
-    - role: '{{playbook_dir}}'
-  tasks:
-    - name: check if golint is installed
-      become: '{{go_dev_escalate}}'
-      become_user: root
-      environment:
-        GOROOT: '{{go_dev_root}}'
-        GOPATH: '{{go_dev_path}}'
-      command: "{{go_dev_root}}/bin/go list -f '{{'{{'}}.Root{{'}}'}}' golang.org/x/lint/golint"
+    - role: '{{ playbook_dir }}'

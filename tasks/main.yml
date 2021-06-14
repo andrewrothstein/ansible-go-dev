@@ -24,7 +24,7 @@
 - name: install go pkgs
   become: '{{ go_dev_escalate }}'
   become_user: root
-  with_items: '{{  go_dev_get_default + go_dev_get|default([])  }}'
+  with_items: '{{  go_dev_get_default | default([]) + go_dev_get | default([])  }}'
   command: '{{ go_dev_root }}/bin/go get -u {{ item.pkg }}'
   environment:
     GOROOT: '{{ go_dev_root }}'
