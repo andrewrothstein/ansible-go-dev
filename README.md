@@ -1,6 +1,6 @@
 andrewrothstein.go-dev
 =========
-[![Build Status](https://travis-ci.org/andrewrothstein/ansible-go-dev.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-go-dev)
+![Build Status](https://github.com/andrewrothstein/ansible-go-dev/actions/workflows/build.yml/badge.svg)
 
 Set yourself up for go development with GOPATH set to ~/go.
 
