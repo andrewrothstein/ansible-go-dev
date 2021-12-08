@@ -1,8 +1,8 @@
 dependencies:
 - role: andrewrothstein.go
-  version: v2.2.3
+  version: v2.2.4
 - role: andrewrothstein.git
-  version: v3.1.3
+  version: v3.1.4
 - role: andrewrothstein.gcc-toolbox
   version: v1.1.3
 galaxy_info:
@@ -33,6 +33,7 @@ galaxy_info:
   - name: Fedora
     versions:
     - 34
+    - 35
   - name: MacOSX
     versions:
     - all
