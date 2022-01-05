@@ -1,10 +1,7 @@
 dependencies:
-- role: andrewrothstein.go
-  version: v2.2.5
-- role: andrewrothstein.git
-  version: v3.1.5
-- role: andrewrothstein.gcc-toolbox
-  version: v1.1.4
+- andrewrothstein.go
+- andrewrothstein.git
+- andrewrothstein.gcc-toolbox
 galaxy_info:
   author: Andrew Rothstein
   company: BlackRock
@@ -32,8 +29,8 @@ galaxy_info:
     - 8
   - name: Fedora
     versions:
-    - 34
     - 35
+    - 36
   - name: MacOSX
     versions:
     - all
