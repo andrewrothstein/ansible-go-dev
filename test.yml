@@ -1,8 +1,8 @@
 ---
 - hosts: all
   vars:
-    go_dev_get:
-      - pkg: github.com/spf13/cobra
+    go_dev_install:
+      - pkg: github.com/spf13/cobra-cli@latest
         target: cobra
   roles:
     - role: '{{ playbook_dir }}'
