@@ -32,7 +32,7 @@
   args:
     creates: '{{ go_dev_path }}/bin/{{ item.target }}'
 
-- name: set go-dev environment variables
+- name: set go-dev environment variables in {{ go_dev_profile_dir }}
   become: '{{ go_dev_escalate }}'
   become_user: root
   with_items:
