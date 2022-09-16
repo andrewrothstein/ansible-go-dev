@@ -1,8 +1,4 @@
 ---
-dependencies:
-- andrewrothstein.go
-- andrewrothstein.git
-- andrewrothstein.gcc-toolbox
 galaxy_info:
   author: Andrew Rothstein
   company: BlackRock
