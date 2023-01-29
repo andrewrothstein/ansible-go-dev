@@ -26,9 +26,9 @@ Example Playbook
 - hosts: servers
   roles:
     - role: andrewrothstein.go-dev
-	  go_dev_get:
-	    - pkg: github.com/cloudflare/cfssl/cmd/...
-		  target: cfssl
+      go_dev_install:
+        - pkg: github.com/cloudflare/cfssl/cmd/...
+          target: cfssl
 ```
 
 See [test.yml](test.yml)
